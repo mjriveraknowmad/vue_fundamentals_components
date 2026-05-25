@@ -30,6 +30,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { inject } from "vue";
 import LuckyNumber from "./LuckyNumber.vue";
 const props = defineProps({
   name: { type: String, required: true },
@@ -37,8 +38,10 @@ const props = defineProps({
   ownername: String,
   email: { type: String, required: false, default: "-n/a-" },
   isFavorite: Boolean,
-  maxNumber: { type: Number },
+  // maxNumber: { type: Number },
 });
+
+const maxNumber = inject("maxNumber");
 
 const emit = defineEmits(["update-favorite"]);
 </script>

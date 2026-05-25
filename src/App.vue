@@ -13,8 +13,9 @@
       <AddContact @add-contact="onAddContact"></AddContact>
       <div class="row">
         <div class="col-12" v-for="contact in contacts" :key="contact.name">
+          <!-- :maxNumber="maxNumber"  -->
           <Contact :name="contact.name" :phone="contact.phone" :ownername="contact.ownerName" :email="contact.email"
-            :isFavorite="contact.isFavorite" :maxNumber="maxNumber" @update-favorite="
+            :isFavorite="contact.isFavorite" @update-favorite="
               contact.isFavorite = onUpdateFavorite($event, contact.phone)
               "></Contact>
         </div>
@@ -24,11 +25,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, provide } from "vue";
 import Contact from "./components/Contact.vue";
 import AddContact from "./components/AddContact.vue";
 const ownerName = ref("dotnetmastery");
 const maxNumber = ref(100);
+
+provide("maxNumber", maxNumber);
+
 const contacts = reactive([
   {
     name: "Bhrugen",
