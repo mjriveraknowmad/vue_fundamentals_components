@@ -1,6 +1,7 @@
 # vue_fundamentals_components
 
-This template should help get you started developing with Vue 3 in Vite.
+Créditos:
+Curso de Vue Guia Completa : https://udemy.com/course/vue-guia-completa
 
 ## Recommended IDE Setup
 
