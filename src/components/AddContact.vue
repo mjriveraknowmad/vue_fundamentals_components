@@ -22,8 +22,8 @@
   </div>
 </template>
 
-<script setup>
-import { reactive, defineEmits } from "vue";
+<script setup lang="ts">
+import { reactive } from "vue";
 
 const emit = defineEmits(["add-contact"]);
 const contact = reactive({
